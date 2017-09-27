@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr><th>编号</th><th>名字</th></tr>
+            @foreach (var item in Model)
+            {
+                <tr><td>@item.id</td><td>@item.name</td><td>@item.address</td><td><a href="/Dataview/eidt/@item.id">编辑</a></td><td><a href="/Dataview/delect/@item.id">删除</a></td></tr>
+            }
+        </table>
+        <a href="/DataView/Add">添加</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+@using MVCdemo.Controllers;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>select</title>
+</head>
+<body>
+    <div> 
+        @foreach(var item in Model)
+        { 
+            <span>ID：</span>@item.id
+            <span>Name：</span>@item.name
+            <span>Address：</span>@item.address
+        }
+    </div>
+</body>
+</html>

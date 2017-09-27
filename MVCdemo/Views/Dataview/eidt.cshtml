@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>eidt</title>
+</head>
+<body>
+    <div> 
+        <form method="post" action="@Url.Action("eidts","Dataview")">
+            编号：<input type="text" name="uid" value="@Model.id" />
+            姓名：<input type="text" name="uname" value="@Model.name" />
+            地址：<input type="text" name="uaddress" value="@Model.address"/>
+            <input type="submit" value="修改" />
+        </form>
+    </div>
+</body>
+</html>

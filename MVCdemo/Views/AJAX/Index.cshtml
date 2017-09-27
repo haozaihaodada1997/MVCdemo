@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Js/jquery-1.8.0.js"></script>
+    <script src="~/Js/jquery.unobtrusive-ajax.js"></script>
+</head>
+<body>
+    <div>
+        @Ajax.ActionLink("点击","Add","ajax",new AjaxOptions()
+   {
+       HttpMethod = "post", UpdateTargetId = "divs",InsertionMode=InsertionMode.InsertAfter,Confirm="确定点击吗"
+   }
+       )
+    </div>
+        @using (Ajax.BeginForm("AddForm", "ajax", new AjaxOptions()
+        {
+            HttpMethod = "post",
+            UpdateTargetId = "divs",
+        }))
+        {
+            @:id:<input type="text" name="uid" />
+            @:name:<input type="text" name="uname" />
+            @:age:<input type="text" name="uage" />
+            <input type="submit" value="提交" />
+        }
+        <div id="divs">
+            <h1>div的数据</h1>
+        </div>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $.ajax({
+                    type: 'post',
+                    url: "/lianxi/ajax",
+                    data: $("#form").serialize(),
+                    success: function (data) {
+                        alert(data);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>这是Account页面的Index</h1>
+       <a href="ParmTest?id=1">地址传值</a>
+       <a href="RouteTest/8">路由传值</a>
+        <form method="post" action="FormParm">
+            id：<input type="text" id="uid" name="uid" />
+            name：<input type="text" id="uanme" name="uname"/>
+            address：<input type="text" id="uaddress" name="uaddress" />
+            <input type="submit" value="确定" />
+        </form>
+    </div>
+</body>
+</html>
